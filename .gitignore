@@ -1,1 +1,9 @@
-# Created by .ignore support plugin (hsz.mobi)
+.gradle
+!gradle-wrapper.jar
+.gradle/
+.idea/
+.idea/uiDesigner.xml
+.idea/vcs.xml
+build
+out
+
