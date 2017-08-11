@@ -1,4 +1,4 @@
-package com.kodilla.testing.collection;
+package com.kodilla.testing.forum.tdd;
 
 /*
 W utworzonym pakiecie stwórz klasę testową (zbiór testów) CollectionTestSuite, a w niej napisz testy sprawdzające
@@ -8,6 +8,8 @@ testOddNumbersExterminatorNormalList (sprawdzi czy klasa zachowuje się poprawni
 Użyj również adnotacji @Before oraz @After, aby wyświetlić informację o tym, jakie operacje (testy) są aktualnie wykonywane.
  */
 
+import com.kodilla.testing.collection.CollectionUtils;
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,8 +24,8 @@ public class CollectionTestSuite {
 
     @Before
     public void setUpTest() {
+        //Given
         oddNumbersExterminator = new OddNumbersExterminator();
-        ArrayList<Integer> result = new ArrayList<>();
         System.out.println("Test case: begin");
     }
 
@@ -35,9 +37,11 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         System.out.println("Testing OddNumbersExterminator on empty list");
-
+        //Given
         ArrayList<Integer> emptyList = new ArrayList<>();
+        //When
         result = oddNumbersExterminator.exterminate(emptyList);
+        //Then
         Assert.assertEquals(emptyList, result);
 
     }
@@ -45,19 +49,15 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         System.out.println("Testing OddNumbersExterminator on normal list");
-
-
-        ArrayList<Integer> numbersList = new ArrayList<>();
-        for (int i = 0; i <= 100; i++) {
-            numbersList.add(i);
-        }
-
+        //Given
+        ArrayList<Integer> numbersList = CollectionUtils.generateNumbersArray(0,100);
         ArrayList<Integer> expectedResult = new ArrayList<>();
-        for (int i = 2; i <= 100; i = i+2) {
+        for (int i = 2; i <= 100; i += 2) {
             expectedResult.add(i);
         }
-
+        //When
         result = oddNumbersExterminator.exterminate(numbersList);
+        //Then
         Assert.assertEquals(expectedResult, result);
     }
 
