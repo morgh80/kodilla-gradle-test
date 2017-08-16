@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public final class CollectionUtils {
 
+    private CollectionUtils() {
+    }
+
     public static ArrayList<Integer> generateNumbersArray(Integer from, Integer to) {
         ArrayList<Integer> numberArray = new ArrayList<>();
         for (Integer number = from; number <= to; number++) {

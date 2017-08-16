@@ -40,7 +40,7 @@ public class ShapeCollector {
                if (counter < shapeCollection.size()) {
                    shapes += shape.getShapeName() + ", ";
                } else {
-                   shapes  += shape.getShapeName();
+                   shapes  += shape.getShapeName()g;
                }
                counter++;
            }
