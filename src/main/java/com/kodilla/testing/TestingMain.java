@@ -21,5 +21,6 @@ public class TestingMain {
         shapeCollector.addFigure(circle);
         shapeCollector.addFigure(square);
         System.out.println(shapeCollector.showFigures());
+
     }
 }
