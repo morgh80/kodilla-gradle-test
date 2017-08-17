@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum.tdd;
+package com.kodilla.testing.collection.forum;
 
 import com.kodilla.testing.collection.CollectionUtils;
 import com.kodilla.testing.collection.OddNumbersExterminator;
